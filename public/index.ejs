@@ -73,20 +73,16 @@
         </form>
         <br>
 
-        <% if (locals.error) { %>
-            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                <%= error %>
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        <% if (locals.msg) { %>
+            <div class='alert alert-<%= msg.type %> alert-dismissible fade show' role="alert">
+                <%= msg.content %>
+                    <% if (locals.slug) { %>
+                        <a href="/<%= slug %>">smol.DCRalph.com/<%= slug %></a>
+                        <% } %>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
             <% } %>
 
-                <% if (locals.success) { %>
-                    <div class="alert alert-success alert-dismissible fade show" role="alert">
-                        <%= success %> <br>
-                            <a href="/<%= url %>">smol.DCRalph.com/<%= url %></a>
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
-                    <% } %>
 
     </div>
 

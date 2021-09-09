@@ -34,12 +34,12 @@ app.post('/url', (req, res) => {
 
         for (i = 0; i < dataIN.length; i++) {
             if (dataIN[i].slug == slug) {
-                return res.status(200).render('index', { msg: 'Sulg allready exists', type: 'danger' });
+                return res.status(200).render('index', { msg: { content: 'Sulg allready exists', type: 'danger' } });
             }
         }
         for (i = 0; i < bad.length; i++) {
             if (bad[i] == slug) {
-                return res.status(200).render('index', { msg: 'Nice try but you cant do that', type: 'danger' });
+                return res.status(200).render('index', { msg: { content: 'Nice try but you cant do that', type: 'danger' } });
             }
         }
 
@@ -51,7 +51,7 @@ app.post('/url', (req, res) => {
         .push({ slug, url })
         .write()
 
-    res.status(200).render('index', { msg: 'Created!', type: 'sucess', url: slug });
+    res.status(200).render('index', { msg: { content: 'Created!', type: 'success' }, slug });
 })
 
 app.get('/db', (req, res) => {
@@ -64,7 +64,7 @@ app.get('/:slug', (req, res) => {
 
     for (i = 0; i < bad.length; i++) {
         if (bad[i] == req.params.slug) {
-            return res.status(200).render('index', { msg: 'Nice try but you cant do that', type: 'danger' });
+            return res.status(200).render('index', { msg: { content: 'Nice try but you cant do that', type: 'danger' } });
         }
     }
 
@@ -74,7 +74,7 @@ app.get('/:slug', (req, res) => {
             return res.redirect(dataIN[i].url)
         }
     }
-    return res.status(200).render('index', { msg: 'Slug not found', type: 'info' });
+    return res.status(200).render('index', { msg: { content: 'Slug not found', type: 'info' } });
 })
 
 
