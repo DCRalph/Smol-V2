@@ -6,7 +6,7 @@
 
     <title>Data Base</title>
 </head>
-<body>
+<body class="bg-dark text-light"></body>>
     <main class="container pt-4 text-light">
         <div class="row text-center justify-content-center">
             <h1><%= urls.length %></h1>
@@ -40,10 +40,10 @@
                                     <%- i + 1 %>
                                 </th>
                                 <td>
-                                    <%- p.slug %>
+                                    <%- url.slug %>
                                 </td>
                                 <td>
-                                    <%- p.url %>
+                                    <%- url.url %>
                                 </td>
                                 <!-- <td>
                                     <button type="button" class="btn btn-danger" onclick="deleteRow(<%- i %>)"><i
