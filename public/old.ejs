@@ -1,0 +1,97 @@
+<body class="bg-dark text-light">
+
+    <main class="container">
+        
+
+        <div class="row justify-content-center">
+
+            <div class="col">
+
+                <table class="table text-light">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Slug</th>
+                            <th scope="col">Url</th>
+                            <!-- <th scope="col">Delete</th> -->
+                        </tr>
+                    </thead>
+                    <tbody id="table">
+                        <!-- <tr>
+                            <th scope="row">1</th>
+                            <td contenteditable="true">Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                        </tr> -->
+
+                        <% urls.forEach(function(url, i){ %>
+                            <tr>
+                                <th>
+                                    <%- i + 1 %>
+                                </th>
+                                <td>
+                                    <%- url.slug %>
+                                </td>
+                                <td>
+                                    <%- url.url %>
+                                </td>
+                                <!-- <td>
+                                    <button type="button" class="btn btn-danger" onclick="deleteRow(<%- i %>)"><i
+                                            class="fas fa-trash-alt"></i></button>
+                                </td> -->
+                            </tr>
+                            <% }); %>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        
+
+    </main>
+
+    <!-- <main class="container pt-4 text-light"> -->
+        
+
+        
+
+        <!-- <div class="row text-center justify-content-center" id="content">
+            <% urls.forEach(function(url){ %>
+                <div class="card text-dark text-start bg-light m-3" style="max-width: 24rem;">
+                    <h4 class="card-header"><%= url.slug %></h4>
+                    <div class="card-body">
+                        <div class="row justify-content-center">
+                            <div class="col"><p><%= url.url %></p></div>
+                        </div>
+                    </div>
+                </div>
+            <% }); %>
+        </div> -->
+    <!-- </main> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+
+    <!-- <script>
+
+        console.log(got.length);
+        console.log(got[5]);
+        console.log(got[5].url);
+
+        for(let i = 0; i < got.length; i++){
+
+        document.getElementById('content').innerHTML += `
+        <div class="card text-dark text-start bg-light m-3" style="max-width: 24rem;">
+            <h4 class="card-header">${got[i].slug}</h4>
+            <div class="card-body">
+                <div class="row justify-content-center">
+                    <div class="col"><p>${got[i].url}</p></div>
+                </div>
+            </div>
+        </div>
+        `
+        }
+
+    </script> -->
+</body>
