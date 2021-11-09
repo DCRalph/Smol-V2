@@ -30,22 +30,16 @@
                         </tr>
                     </thead>
                     <tbody id="table">
-                        <!-- <tr>
-                            <th scope="row">1</th>
-                            <td contenteditable="true">Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                        </tr> -->
 
                         <% urls.forEach(function(url, i){ %>
                             <tr>
                                 <th>
                                     <%- i + 1 %>
                                 </th>
-                                <td>
+                                <td class="text-break">
                                     <%- url.slug %>
                                 </td>
-                                <td>
+                                <td class="text-break">
                                     <%- url.url %>
                                 </td>
                             </tr>
@@ -64,8 +58,5 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
 
-
 </body>
-
-
 </html>
